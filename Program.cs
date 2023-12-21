@@ -193,7 +193,34 @@ app.MapGet("/api/cities", () =>
 {
     return city.Select(t => new CityDTO
     {
-        
+        Id = t.Id,
+        Name = t.Name,
+        WalkerId = t.WalkerId,
+        DogId = t.DogId
+    });
+});
+
+app.MapGet("/api/dogs", () => 
+{
+    return dog.Select(t => new DogDTO
+    {
+        Id = t.Id,
+        Name = t.Name,
+        CityId = t.CityId,
+        WalkerId = t.WalkerId
+    });
+});
+
+
+
+app.MapGet("/api/walkers", () =>
+{
+    return walker.Select(t => new WalkerDTO 
+    {
+        Id = t.Id,
+        Name = t.Name,
+        CityId = t.CityId,
+        DogId = t.DogId
     });
 });
 
