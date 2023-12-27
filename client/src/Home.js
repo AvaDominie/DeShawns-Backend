@@ -1,4 +1,5 @@
-import { Dogs } from "./Dog.js";
+
+import Dogs from "./Dog";
 import { getGreeting, getDogs } from "./apiManager";
 import { useEffect, useState } from "react";
 
@@ -42,19 +43,7 @@ export default function Home() {
     <div>
       <p>{greeting.message}</p>
       <Dogs />
+      
     </div>
   )
 }
-
-      // <h2>All Dogs</h2>
-      // <select id="dog">
-      //   <ul>
-      //     {
-      //       dogList.map(
-      //         (dog) => {
-      //           return <li value={dog.id}>{dog.Name}</li>
-      //         }
-      //       )
-      //     }
-      //   </ul>
-      // </select>

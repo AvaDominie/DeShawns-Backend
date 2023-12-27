@@ -1,7 +1,8 @@
+import { Link } from "react-router-dom";
 import { getDogs } from "./apiManager";
 import { useEffect, useState } from "react";
 
-export const Dogs = () => {
+export default function Dogs() {
     const [dogs, setDogs] = useState([]);
 
     useEffect(() => {
@@ -27,7 +28,9 @@ export const Dogs = () => {
                     {
                         dogs.map(
                             (dog) => {
-                                return <li key={dog.id} value={dog.id}>{dog.name}</li>
+                                return <Link to={`/dog-detail/${dog.id}`}>
+                                    <li key={dog.id} value={dog.id}>{dog.name}</li>
+                                </Link>
                             }
                         )
                     }

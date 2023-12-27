@@ -24,3 +24,17 @@ export const getWalkers = async () => {
   const data = await res.json();
   return data
 }
+
+
+export const getDogById = async (id) => {
+  const res = await fetch(`/api/dogs?id=${id}`);
+  const data = await res.json();
+  return data
+}
+
+
+export const getWalkerById = async (id) => {
+  const res = await fetch(`/api/walkers?id=${id}`);
+  const data = await res.json();
+  return data
+}
