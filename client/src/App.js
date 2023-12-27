@@ -40,6 +40,7 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./Home.js";
 import Walkers from "./Walker.js";
 import Cities from "./City.js";
+import DogDetail from "./DogDetails.js";
 
 function App() {
   return (
@@ -63,6 +64,7 @@ function App() {
           <Route path="/walkers" element={<Walkers />} />
           <Route path="/cities" element={<Cities />} />
           <Route path="/" element={<Home />} />
+          <Route path="/dog-detail/:dogId" element={<DogDetail />} />
         </Routes>
       </>
     </div>
