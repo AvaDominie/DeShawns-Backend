@@ -1,4 +1,5 @@
 
+import { useNavigate } from "react-router-dom";
 import Dogs from "./Dog";
 import { getGreeting, getDogs } from "./apiManager";
 import { useEffect, useState } from "react";
@@ -9,6 +10,7 @@ export default function Home() {
   });
   const [dogList, setDogList] = useState({})
 
+    const navigate = useNavigate()
 
 
   useEffect(() => {
@@ -37,13 +39,17 @@ export default function Home() {
   }, []);
 
 
+  const LinktoDogForm = () => {
+    navigate(`/add-dog`)
+  }
+
 
   console.log("working")
   return (
     <div>
       <p>{greeting.message}</p>
       <Dogs />
-      
+      <button className="add-dog-form-button" onClick={LinktoDogForm}>Add Dog</button>
     </div>
   )
 }

@@ -38,3 +38,34 @@ export const getWalkerById = async (id) => {
   const data = await res.json();
   return data
 }
+
+
+
+export const CreateNewDog = async (dog) => {
+  const res = await fetch(`/api/dogs`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(dog),
+  });
+  const data = await res.json();
+  return data;
+}
+
+
+// export const CreateNewDog = async () => {
+//   const order = {
+//       name: "Pumpkin",
+//       cityId: 1,
+//       walkerId: 3,
+//       } 
+//   await fetch("/api/dogs", {
+//       method: "POST",
+//       headers: {
+//           "Content-Type": "application/json"
+//       },
+//       body: JSON.stringify(order)
+//   });
+//   document.dispatchEvent(new CustomEvent("stateChanged"));
+// };
